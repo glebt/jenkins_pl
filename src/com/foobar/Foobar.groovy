@@ -6,15 +6,13 @@ def foobarHellow() {
 }
 
 def createConfig() {
-    def myConfigTemplate = new File("config.template") 
-    // read content
-    def myConfigTemplateText = myConfigTemplate.text
+    def myConfigTemplateText = readFile file: "config.template"
+
     // replace placeholders
     myConfigTemplateText = (myConfigTemplateText =~ /CLIENT_SECRET/).replaceFirst("UIOPPOIUO12345_CLIENT_SECRET")
     myConfigTemplateText = (myConfigTemplateText =~ /ACCESS_TOKEN/).replaceFirst("ABCDEFHREPIJOPIJPOU!_ACCESS_TOKEN")
-    // write to config
-    def myConfig = new File("config") 
-    myConfig.write(myConfigTemplateText)
+
+    writeFile file: "config", text: myConfigTemplateText
 }
 
 return this
