@@ -1,0 +1,17 @@
+gate:
+  endpoint: http://ae6bf302515cb11eaa0cf020d318d744-1063628705.us-west-2.elb.amazonaws.com
+auth:
+  enabled: true
+  oauth2:
+    tokenUrl: https://github.com/login/oauth/access_token
+    authUrl: https://github.com/login/oauth/authorize
+    clientId: 457aa12345678
+    clientSecret: CLIENT_SECRET
+    scopes:
+    - email
+    cachedToken:
+      accesstoken: ACCESS_TOKEN
+      tokentype: bearer
+      refreshtoken: ""
+      expiry: 0001-01-01T00:00:00Z
+  ldap: null

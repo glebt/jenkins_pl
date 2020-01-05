@@ -8,6 +8,7 @@ node {
 
     stage('Load') {
         f = load 'src/com/foobar/Foobar.groovy'
+        f.createConfig()
     }    
 
     stage('Build')
