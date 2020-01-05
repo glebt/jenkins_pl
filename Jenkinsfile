@@ -1,10 +1,18 @@
-import com.foobar.*
+def f
 
-node{
+node {
+
+    stage('Checkout') {
+        checkout scm
+    }    
+
+    stage('Load') {
+        f = load 'src/com/foobar/Foobar.groovy'
+    }    
+
     stage('Build')
     {
         echo 'this is a scripted pipeline with stage'
-        def f = load 'src/com/foobar/Foobar.groovy'
         f.foobarHellow()
         echo 'done'
     }
