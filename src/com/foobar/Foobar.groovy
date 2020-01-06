@@ -5,12 +5,12 @@ def foobarHellow() {
     print "I am the foobarHellow() function from Foobar.groovy\n"
 }
 
-def createConfig() {
+def createConfig(clientId, accessToken) {
     def myConfigTemplateText = readFile file: "config.template"
 
     // replace placeholders
-    myConfigTemplateText = (myConfigTemplateText =~ /CLIENT_SECRET/).replaceFirst("UIOPPOIUO12345_CLIENT_SECRET")
-    myConfigTemplateText = (myConfigTemplateText =~ /ACCESS_TOKEN/).replaceFirst("ABCDEFHREPIJOPIJPOU!_ACCESS_TOKEN")
+    myConfigTemplateText = (myConfigTemplateText =~ /CLIENT_SECRET/).replaceFirst(clientId)
+    myConfigTemplateText = (myConfigTemplateText =~ /ACCESS_TOKEN/).replaceFirst(accessToken)
 
     writeFile file: "config", text: myConfigTemplateText
 }
