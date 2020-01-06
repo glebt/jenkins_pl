@@ -9,6 +9,7 @@ node {
     stage('Load') {
         f = load 'src/com/foobar/Foobar.groovy'
         f.createConfig()
+        echo "my test string param ${params.TEST_STRING_PARAMETER}"
     }    
 
     stage('Build')
