@@ -9,7 +9,7 @@ node {
     stage('LoadAndCreateConfig') {
         echo "my test string param ${params.TEST_STRING_PARAMETER}"
         f = load 'src/com/foobar/Foobar.groovy'
-        f.createConfig( params.TEST_STRING_PARAMETER, params.CLIENT_SECRET_PARAM )
+        f.createConfig( "client_id_ax1fsd4j9fd", "access_token_asdv8rr90qw77" )
     }    
 
     stage('Build')
